@@ -121,15 +121,20 @@ void TIMER0_IRQHandler(){
 		adcv = (LPC_ADC->ADDR0 & 4095<<4)>>4;
 		volts = 3.3 * adcv / 4095;
 		temperature = volts / 0.01 - 2;
-		dac = volts * 1024 / 0.42; // Convertimos volts valor del dac
-		if (dac < 621) {
+		//dac = volts * 1024 / 0.42; // Convertimos volts valor del dac
+		if (temperature < 27) {
 			dac = 0;
-		} else if (dac > 1023) {
-			dac = 1023;
+		} else if(temperature < 37) {
+			dac = 600;
 		}else{
-			dac = (dac ^ 3) % 1024;
+			dac = 1023;
 		}
+
 		DAC_UpdateValue(LPC_DAC, dac);
+	}else{
+		if (temperature > 27 && temperature < 37){
+			DAC_UpdateValue(LPC_DAC, 0);
+		}
 	}
 
 	TIM_ResetCounter(LPC_TIM0);
