@@ -12,6 +12,8 @@ C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\D
                               ./src/main.o (PINSEL_ConfigPin)
 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
                               ./src/main.o (TIM_ClearIntPending)
+C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                              ./src/main.o (UART_Init)
 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
                               ./src/cr_startup_lpc175x_6x.o (__main)
 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(division_64.o)
@@ -50,6 +52,7 @@ Discarded input sections
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
@@ -68,8 +71,6 @@ Discarded input sections
  .bss           0x00000000        0x0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
  .text.SystemCoreClockUpdate
                 0x00000000       0xb8 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
- .data.SystemCoreClock
-                0x00000000        0x4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
  .debug_macro   0x00000000       0x10 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
  .debug_macro   0x00000000      0x12e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
  .debug_macro   0x00000000      0x5b3 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
@@ -92,12 +93,6 @@ Discarded input sections
  .text          0x00000000        0x0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .data          0x00000000        0x0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .bss           0x00000000        0x0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .text.CLKPWR_GetPCLKSEL
-                0x00000000       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .text.CLKPWR_GetPCLK
-                0x00000000       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .text.CLKPWR_ConfigPPWR
-                0x00000000       0x34 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .text.CLKPWR_Sleep
                 0x00000000       0x10 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .text.CLKPWR_DeepSleep
@@ -106,8 +101,6 @@ Discarded input sections
                 0x00000000       0x1c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .text.CLKPWR_DeepPowerDown
                 0x00000000       0x1c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .rodata.CSWTCH.5
-                0x00000000        0x4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .debug_macro   0x00000000      0xab4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .debug_macro   0x00000000       0x2e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .debug_macro   0x00000000       0x10 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
@@ -236,6 +229,80 @@ Discarded input sections
  .debug_macro   0x00000000       0x63 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
  .debug_macro   0x00000000      0x2f1 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
  .debug_macro   0x00000000       0xdd C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .group         0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text          0x00000000        0x0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .data          0x00000000        0x0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .bss           0x00000000        0x0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_ReceiveByte
+                0x00000000       0x40 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_Receive
+                0x00000000       0x50 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_ForceBreak
+                0x00000000       0x44 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_IntConfig
+                0x00000000      0x110 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_GetLineStatus
+                0x00000000       0x40 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_GetIntId
+                0x00000000       0x40 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_CheckBusy
+                0x00000000        0xc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_ABCmd
+                0x00000000       0xe4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_ABClearIntPending
+                0x00000000       0x44 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_DeInit
+                0x00000000       0x80 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_IrDAInvtInputCmd
+                0x00000000       0x44 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_IrDACmd
+                0x00000000       0x48 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_IrDAPulseDivConfig
+                0x00000000       0x4c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_FullModemForcePinState
+                0x00000000       0x7c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_FullModemConfigMode
+                0x00000000       0x74 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_FullModemGetStatus
+                0x00000000       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_RS485Config
+                0x00000000       0xf4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_RS485ReceiverCmd
+                0x00000000       0x16 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_RS485Send
+                0x00000000       0x2e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_RS485SendSlvAddr
+                0x00000000       0x2a C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .text.UART_RS485SendData
+                0x00000000        0x6 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .rodata.CSWTCH.44
+                0x00000000        0x3 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .rodata.CSWTCH.29
+                0x00000000        0xe C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000      0xab4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000       0x1c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000       0x2e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000       0x10 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000      0x12e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000      0x5b3 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000       0x18 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000      0x7af C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000      0x2c7 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000       0x63 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000      0x2f1 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00000000       0xdd C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
  .text          0x00000000        0x0 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
  .data          0x00000000        0x0 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
  .bss           0x00000000        0x0 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
@@ -374,7 +441,7 @@ END GROUP
                 0x20084000                __top_RamAHB32 = 0x20084000
                 0x20084000                __top_RAM2 = 0x20084000
 
-.text           0x00000000     0x107c
+.text           0x00000000     0x1678
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -383,15 +450,15 @@ END GROUP
                 0x000000cc                . = ALIGN (0x4)
                 0x000000cc                __section_table_start = .
                 0x000000cc                __data_section_table = .
-                0x000000cc        0x4 LONG 0x107c LOADADDR (.data)
+                0x000000cc        0x4 LONG 0x1678 LOADADDR (.data)
                 0x000000d0        0x4 LONG 0x10000000 ADDR (.data)
-                0x000000d4        0x4 LONG 0x14 SIZEOF (.data)
-                0x000000d8        0x4 LONG 0x107c LOADADDR (.data_RAM2)
+                0x000000d4        0x4 LONG 0x18 SIZEOF (.data)
+                0x000000d8        0x4 LONG 0x1678 LOADADDR (.data_RAM2)
                 0x000000dc        0x4 LONG 0x2007c000 ADDR (.data_RAM2)
                 0x000000e0        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x000000e4                __data_section_table_end = .
                 0x000000e4                __bss_section_table = .
-                0x000000e4        0x4 LONG 0x10000014 ADDR (.bss)
+                0x000000e4        0x4 LONG 0x10000018 ADDR (.bss)
                 0x000000e8        0x4 LONG 0x18 SIZEOF (.bss)
                 0x000000ec        0x4 LONG 0x2007c000 ADDR (.bss_RAM2)
                 0x000000f0        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
@@ -458,128 +525,171 @@ END GROUP
  *(.text*)
  .text.NVIC_EnableIRQ
                 0x00000300       0x30 ./src/main.o
- .text.main     0x00000330       0x18 ./src/main.o
+ .text.main     0x00000330       0x1c ./src/main.o
                 0x00000330                main
  .text.configTimer
-                0x00000348       0x80 ./src/main.o
-                0x00000348                configTimer
+                0x0000034c       0x80 ./src/main.o
+                0x0000034c                configTimer
  .text.configADC
-                0x000003c8       0x70 ./src/main.o
-                0x000003c8                configADC
+                0x000003cc       0x70 ./src/main.o
+                0x000003cc                configADC
  .text.configDAC
-                0x00000438       0x1c ./src/main.o
-                0x00000438                configDAC
+                0x0000043c       0x1c ./src/main.o
+                0x0000043c                configDAC
+ .text.configUART
+                0x00000458       0x80 ./src/main.o
+                0x00000458                configUART
  .text.configPin
-                0x00000454       0x4e ./src/main.o
-                0x00000454                configPin
- *fill*         0x000004a2        0x6 ff
+                0x000004d8       0x62 ./src/main.o
+                0x000004d8                configPin
+ *fill*         0x0000053a        0x6 ff
  .text.TIMER0_IRQHandler
-                0x000004a8      0x178 ./src/main.o
-                0x000004a8                TIMER0_IRQHandler
+                0x00000540      0x190 ./src/main.o
+                0x00000540                TIMER0_IRQHandler
+ .text.UART3_SendByte
+                0x000006d0       0x28 ./src/main.o
+                0x000006d0                UART3_SendByte
  .text.SystemInit
-                0x00000620       0xd8 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
-                0x00000620                SystemInit
+                0x000006f8       0xd8 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                0x000006f8                SystemInit
  .text.CLKPWR_SetPCLKDiv
-                0x000006f8       0x4c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
-                0x000006f8                CLKPWR_SetPCLKDiv
+                0x000007d0       0x4c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                0x000007d0                CLKPWR_SetPCLKDiv
+ .text.CLKPWR_GetPCLKSEL
+                0x0000081c       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                0x0000081c                CLKPWR_GetPCLKSEL
+ .text.CLKPWR_GetPCLK
+                0x0000083c       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                0x0000083c                CLKPWR_GetPCLK
+ .text.CLKPWR_ConfigPPWR
+                0x0000085c       0x34 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                0x0000085c                CLKPWR_ConfigPPWR
  .text.DAC_Init
-                0x00000744       0x24 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
-                0x00000744                DAC_Init
+                0x00000890       0x24 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+                0x00000890                DAC_Init
  .text.DAC_UpdateValue
-                0x00000768       0x2c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
-                0x00000768                DAC_UpdateValue
+                0x000008b4       0x2c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+                0x000008b4                DAC_UpdateValue
  .text.DAC_SetBias
-                0x00000794       0x30 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
-                0x00000794                DAC_SetBias
+                0x000008e0       0x30 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+                0x000008e0                DAC_SetBias
  .text.check_failed
-                0x000007c4        0x2 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
-                0x000007c4                check_failed
- *fill*         0x000007c6        0x2 ff
+                0x00000910        0x2 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+                0x00000910                check_failed
+ *fill*         0x00000912        0x2 ff
  .text.PINSEL_ConfigPin
-                0x000007c8       0x7c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
-                0x000007c8                PINSEL_ConfigPin
+                0x00000914       0x7c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+                0x00000914                PINSEL_ConfigPin
  .text.TIM_ClearIntPending
-                0x00000844       0x4c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
-                0x00000844                TIM_ClearIntPending
- .text.TIM_Cmd  0x00000890       0x48 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
-                0x00000890                TIM_Cmd
+                0x00000990       0x4c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+                0x00000990                TIM_ClearIntPending
+ .text.TIM_Cmd  0x000009dc       0x48 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+                0x000009dc                TIM_Cmd
  .text.TIM_ResetCounter
-                0x000008d8       0x44 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
-                0x000008d8                TIM_ResetCounter
+                0x00000a24       0x44 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+                0x00000a24                TIM_ResetCounter
  .text.TIM_ConfigMatch
-                0x0000091c       0xcc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
-                0x0000091c                TIM_ConfigMatch
+                0x00000a68       0xcc C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+                0x00000a68                TIM_ConfigMatch
+ .text.UART_Init
+                0x00000b34      0x28c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00000b34                UART_Init
+ .text.UART_ConfigStructInit
+                0x00000dc0       0x12 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00000dc0                UART_ConfigStructInit
+ *fill*         0x00000dd2        0x2 ff
+ .text.UART_SendByte
+                0x00000dd4       0x40 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00000dd4                UART_SendByte
+ .text.UART_Send
+                0x00000e14       0x7e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00000e14                UART_Send
+ *fill*         0x00000e92        0x2 ff
+ .text.UART_FIFOConfig
+                0x00000e94       0xa8 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00000e94                UART_FIFOConfig
+ .text.UART_FIFOConfigStructInit
+                0x00000f3c        0xe C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00000f3c                UART_FIFOConfigStructInit
+ *fill*         0x00000f4a        0x2 ff
+ .text.UART_TxCmd
+                0x00000f4c       0x84 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00000f4c                UART_TxCmd
  .text.__weak_main
-                0x000009e8        0x4 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
-                0x000009e8                __weak_main
-                0x000009e8                __main
+                0x00000fd0        0x4 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
+                0x00000fd0                __weak_main
+                0x00000fd0                __main
  .text.__aeabi_dmul
-                0x000009ec       0xfc d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
-                0x000009ec                __aeabi_dmul
+                0x00000fd4       0xfc d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x00000fd4                __aeabi_dmul
  .text.__aeabi_ddiv
-                0x00000ae8      0x130 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
-                0x00000ae8                __aeabi_ddiv
+                0x000010d0      0x130 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x000010d0                __aeabi_ddiv
  .text.__aeabi_dsub
-                0x00000c18      0x1b4 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
-                0x00000c18                __aeabi_dsub
+                0x00001200      0x1b4 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x00001200                __aeabi_dsub
  .text.__aeabi_dadd
-                0x00000dcc      0x13c d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
-                0x00000dcc                __aeabi_dadd
+                0x000013b4      0x13c d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x000013b4                __aeabi_dadd
  .text.__aeabi_d2f
-                0x00000f08       0x58 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
-                0x00000f08                __aeabi_d2f
+                0x000014f0       0x58 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x000014f0                __aeabi_d2f
  .text.__bhs_ui2d
-                0x00000f60       0x46 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
-                0x00000f60                __bhs_ui2d
+                0x00001548       0x46 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x00001548                __bhs_ui2d
  .text.__aeabi_ui2d
-                0x00000fa6        0x8 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
-                0x00000fa6                __aeabi_ui2d
- *fill*         0x00000fae        0x2 ff
+                0x0000158e        0x8 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x0000158e                __aeabi_ui2d
+ *fill*         0x00001596        0x2 ff
  .text.__aeabi_f2d
-                0x00000fb0       0x38 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
-                0x00000fb0                __aeabi_f2d
+                0x00001598       0x38 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
+                0x00001598                __aeabi_f2d
  .text.__aeabi_fcmplt
-                0x00000fe8       0x3a d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
-                0x00000fe8                __aeabi_fcmplt
+                0x000015d0       0x3a d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
+                0x000015d0                __aeabi_fcmplt
  .text.__aeabi_fcmpgt
-                0x00001022       0x3a d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
-                0x00001022                __aeabi_fcmpgt
+                0x0000160a       0x3a d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
+                0x0000160a                __aeabi_fcmpgt
  *(.rodata .rodata.* .constdata .constdata.*)
+ .rodata.CSWTCH.5
+                0x00001644        0x4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .rodata.DAC_Init.str1.1
-                0x0000105c        0xe C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+                0x00001648        0xe C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
  .rodata.TIM_GetIntStatus.str1.1
-                0x0000106a       0x10 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
-                0x0000107c                . = ALIGN (0x4)
- *fill*         0x0000107a        0x2 ff
+                0x00001656       0x10 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .rodata.UART_Init.str1.1
+                0x00001666        0xf C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                0x00001678                . = ALIGN (0x4)
+ *fill*         0x00001675        0x3 ff
 
-.glue_7         0x0000107c        0x0
- .glue_7        0x0000107c        0x0 linker stubs
+.glue_7         0x00001678        0x0
+ .glue_7        0x00001678        0x0 linker stubs
 
-.glue_7t        0x0000107c        0x0
- .glue_7t       0x0000107c        0x0 linker stubs
+.glue_7t        0x00001678        0x0
+ .glue_7t       0x00001678        0x0 linker stubs
 
-.vfp11_veneer   0x0000107c        0x0
- .vfp11_veneer  0x0000107c        0x0 linker stubs
+.vfp11_veneer   0x00001678        0x0
+ .vfp11_veneer  0x00001678        0x0 linker stubs
 
-.v4_bx          0x0000107c        0x0
- .v4_bx         0x0000107c        0x0 linker stubs
+.v4_bx          0x00001678        0x0
+ .v4_bx         0x00001678        0x0 linker stubs
 
-.iplt           0x0000107c        0x0
- .iplt          0x0000107c        0x0 ./src/cr_startup_lpc175x_6x.o
+.iplt           0x00001678        0x0
+ .iplt          0x00001678        0x0 ./src/cr_startup_lpc175x_6x.o
 
-.rel.dyn        0x0000107c        0x0
- .rel.iplt      0x0000107c        0x0 ./src/cr_startup_lpc175x_6x.o
+.rel.dyn        0x00001678        0x0
+ .rel.iplt      0x00001678        0x0 ./src/cr_startup_lpc175x_6x.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM.exidx      0x0000107c        0x0
-                0x0000107c                __exidx_start = .
+.ARM.exidx      0x00001678        0x0
+                0x00001678                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000107c                __exidx_end = .
-                0x0000107c                _etext = .
+                0x00001678                __exidx_end = .
+                0x00001678                _etext = .
 
-.data_RAM2      0x2007c000        0x0 load address 0x0000107c
+.data_RAM2      0x2007c000        0x0 load address 0x00001678
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2 = .)
                 [!provide]                PROVIDE (__start_data_RamAHB32 = .)
@@ -600,7 +710,7 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _end_uninit_RESERVED = .
 
-.data           0x10000000       0x14 load address 0x0000107c
+.data           0x10000000       0x18 load address 0x00001678
  FILL mask 0xff
                 0x10000000                _data = .
                 [!provide]                PROVIDE (__start_data_RAM = .)
@@ -613,13 +723,16 @@ END GROUP
  *(.data*)
  .data.Tiempo   0x10000000       0x14 ./src/main.o
                 0x10000000                Tiempo
-                0x10000014                . = ALIGN (0x4)
-                0x10000014                _edata = .
+ .data.SystemCoreClock
+                0x10000014        0x4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                0x10000014                SystemCoreClock
+                0x10000018                . = ALIGN (0x4)
+                0x10000018                _edata = .
                 [!provide]                PROVIDE (__end_data_RAM = .)
                 [!provide]                PROVIDE (__end_data_RamLoc32 = .)
 
-.igot.plt       0x10000014        0x0 load address 0x00001090
- .igot.plt      0x10000014        0x0 ./src/cr_startup_lpc175x_6x.o
+.igot.plt       0x10000018        0x0 load address 0x00001690
+ .igot.plt      0x10000018        0x0 ./src/cr_startup_lpc175x_6x.o
 
 .bss_RAM2       0x2007c000        0x0
                 [!provide]                PROVIDE (__start_bss_RAM2 = .)
@@ -632,28 +745,28 @@ END GROUP
                 [!provide]                PROVIDE (__end_bss_RAM2 = .)
                 [!provide]                PROVIDE (__end_bss_RamAHB32 = .)
 
-.bss            0x10000014       0x18
-                0x10000014                _bss = .
+.bss            0x10000018       0x18
+                0x10000018                _bss = .
                 [!provide]                PROVIDE (__start_bss_RAM = .)
                 [!provide]                PROVIDE (__start_bss_RamLoc32 = .)
  *(.bss*)
- .bss.j         0x10000014        0x4 ./src/main.o
-                0x10000014                j
- .bss.adcv      0x10000018        0x4 ./src/main.o
-                0x10000018                adcv
- .bss.dac       0x1000001c        0x4 ./src/main.o
-                0x1000001c                dac
- .bss.volts     0x10000020        0x4 ./src/main.o
-                0x10000020                volts
+ .bss.j         0x10000018        0x4 ./src/main.o
+                0x10000018                j
+ .bss.adcv      0x1000001c        0x4 ./src/main.o
+                0x1000001c                adcv
+ .bss.dac       0x10000020        0x4 ./src/main.o
+                0x10000020                dac
+ .bss.volts     0x10000024        0x4 ./src/main.o
+                0x10000024                volts
  .bss.temperature
-                0x10000024        0x4 ./src/main.o
-                0x10000024                temperature
- .bss.pinMatch  0x10000028        0x1 ./src/main.o
-                0x10000028                pinMatch
+                0x10000028        0x4 ./src/main.o
+                0x10000028                temperature
+ .bss.pinMatch  0x1000002c        0x1 ./src/main.o
+                0x1000002c                pinMatch
  *(COMMON)
-                0x1000002c                . = ALIGN (0x4)
- *fill*         0x10000029        0x3 
-                0x1000002c                _ebss = .
+                0x10000030                . = ALIGN (0x4)
+ *fill*         0x1000002d        0x3 
+                0x10000030                _ebss = .
                 [!provide]                PROVIDE (__end_bss_RAM = .)
                 [!provide]                PROVIDE (__end_bss_RamLoc32 = .)
                 [!provide]                PROVIDE (end = .)
@@ -669,152 +782,164 @@ END GROUP
                 [!provide]                PROVIDE (__end_noinit_RAM2 = .)
                 [!provide]                PROVIDE (__end_noinit_RamAHB32 = .)
 
-.noinit         0x1000002c        0x0
-                0x1000002c                _noinit = .
+.noinit         0x10000030        0x0
+                0x10000030                _noinit = .
                 [!provide]                PROVIDE (__start_noinit_RAM = .)
                 [!provide]                PROVIDE (__start_noinit_RamLoc32 = .)
  *(.noinit*)
-                0x1000002c                . = ALIGN (0x4)
-                0x1000002c                _end_noinit = .
+                0x10000030                . = ALIGN (0x4)
+                0x10000030                _end_noinit = .
                 [!provide]                PROVIDE (__end_noinit_RAM = .)
                 [!provide]                PROVIDE (__end_noinit_RamLoc32 = .)
                 [!provide]                PROVIDE (_pvHeapStart = DEFINED (__user_heap_base)?__user_heap_base:.)
                 0x10008000                PROVIDE (_vStackTop = DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc32 - 0x0))
                 0xefff749e                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
                 0x00000000                _image_start = LOADADDR (.text)
-                0x00001090                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x00001090                _image_size = (_image_end - _image_start)
+                0x00001690                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x00001690                _image_size = (_image_end - _image_start)
 OUTPUT(TPFINALED3.axf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000     0x2cf0
+.debug_info     0x00000000     0x4ddd
  .debug_info    0x00000000      0x278 ./src/cr_startup_lpc175x_6x.o
  .debug_info    0x00000278       0x41 ./src/crp.o
- .debug_info    0x000002b9      0xb25 ./src/main.o
- .debug_info    0x00000dde      0x302 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
- .debug_info    0x000010e0      0x64b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_info    0x0000172b      0x37e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
- .debug_info    0x00001aa9       0xcf C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
- .debug_info    0x00001b78      0x518 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
- .debug_info    0x00002090      0xc60 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_info    0x000002b9      0xf3d ./src/main.o
+ .debug_info    0x000011f6      0x302 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_info    0x000014f8      0x64b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_info    0x00001b43      0x37e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_info    0x00001ec1       0xcf C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_info    0x00001f90      0x518 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+ .debug_info    0x000024a8      0xc60 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_info    0x00003108     0x1cd5 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
-.debug_abbrev   0x00000000      0xdd9
+.debug_abbrev   0x00000000     0x1206
  .debug_abbrev  0x00000000      0x152 ./src/cr_startup_lpc175x_6x.o
  .debug_abbrev  0x00000152       0x37 ./src/crp.o
- .debug_abbrev  0x00000189      0x279 ./src/main.o
- .debug_abbrev  0x00000402      0x10d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
- .debug_abbrev  0x0000050f      0x208 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_abbrev  0x00000717      0x1a5 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
- .debug_abbrev  0x000008bc       0x76 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
- .debug_abbrev  0x00000932      0x1ac C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
- .debug_abbrev  0x00000ade      0x2fb C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_abbrev  0x00000189      0x30e ./src/main.o
+ .debug_abbrev  0x00000497      0x10d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_abbrev  0x000005a4      0x208 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_abbrev  0x000007ac      0x1a5 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_abbrev  0x00000951       0x76 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_abbrev  0x000009c7      0x1ac C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+ .debug_abbrev  0x00000b73      0x2fb C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_abbrev  0x00000e6e      0x398 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
-.debug_aranges  0x00000000      0x278
+.debug_aranges  0x00000000      0x380
  .debug_aranges
                 0x00000000       0x80 ./src/cr_startup_lpc175x_6x.o
  .debug_aranges
                 0x00000080       0x18 ./src/crp.o
  .debug_aranges
-                0x00000098       0x50 ./src/main.o
+                0x00000098       0x60 ./src/main.o
  .debug_aranges
-                0x000000e8       0x28 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                0x000000f8       0x28 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
  .debug_aranges
-                0x00000110       0x58 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                0x00000120       0x58 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .debug_aranges
-                0x00000168       0x40 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+                0x00000178       0x40 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
  .debug_aranges
-                0x000001a8       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+                0x000001b8       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
  .debug_aranges
-                0x000001c8       0x30 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+                0x000001d8       0x30 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
  .debug_aranges
-                0x000001f8       0x80 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+                0x00000208       0x80 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_aranges
+                0x00000288       0xf8 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
 .debug_rnglists
-                0x00000000      0x215
+                0x00000000      0x307
  .debug_rnglists
                 0x00000000       0x5b ./src/cr_startup_lpc175x_6x.o
  .debug_rnglists
-                0x0000005b       0x39 ./src/main.o
+                0x0000005b       0x46 ./src/main.o
  .debug_rnglists
-                0x00000094       0x1b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                0x000000a1       0x1b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
  .debug_rnglists
-                0x000000af       0x3d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                0x000000bc       0x3d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .debug_rnglists
-                0x000000ec       0x37 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+                0x000000f9       0x37 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
  .debug_rnglists
-                0x00000123       0x13 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+                0x00000130       0x13 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
  .debug_rnglists
-                0x00000136       0x4c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+                0x00000143       0x4c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
  .debug_rnglists
-                0x00000182       0x93 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+                0x0000018f       0x93 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_rnglists
+                0x00000222       0xe5 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
-.debug_macro    0x00000000     0x3d89
+.debug_macro    0x00000000     0x44a9
  .debug_macro   0x00000000       0x1d ./src/cr_startup_lpc175x_6x.o
  .debug_macro   0x0000001d      0xaba ./src/cr_startup_lpc175x_6x.o
  .debug_macro   0x00000ad7       0x1a ./src/crp.o
  .debug_macro   0x00000af1       0x34 ./src/crp.o
- .debug_macro   0x00000b25       0xbb ./src/main.o
- .debug_macro   0x00000be0       0x1c ./src/main.o
- .debug_macro   0x00000bfc       0x2e ./src/main.o
- .debug_macro   0x00000c2a       0x10 ./src/main.o
- .debug_macro   0x00000c3a      0x12e ./src/main.o
- .debug_macro   0x00000d68      0x5b3 ./src/main.o
- .debug_macro   0x0000131b       0x18 ./src/main.o
- .debug_macro   0x00001333      0x7af ./src/main.o
- .debug_macro   0x00001ae2      0x2c7 ./src/main.o
- .debug_macro   0x00001da9       0x63 ./src/main.o
- .debug_macro   0x00001e0c       0xe5 ./src/main.o
- .debug_macro   0x00001ef1      0x13f ./src/main.o
- .debug_macro   0x00002030       0xea ./src/main.o
- .debug_macro   0x0000211a      0x2f7 ./src/main.o
- .debug_macro   0x00002411       0x82 ./src/main.o
- .debug_macro   0x00002493      0x12b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
- .debug_macro   0x000025be      0xab4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
- .debug_macro   0x00003072       0x8d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_macro   0x000030ff       0x1c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_macro   0x0000311b      0x2c7 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_macro   0x000033e2      0x2f1 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_macro   0x000036d3       0xa9 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
- .debug_macro   0x0000377c       0x3a C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
- .debug_macro   0x000037b6       0xdd C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
- .debug_macro   0x00003893       0x5a C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
- .debug_macro   0x000038ed       0x5d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
- .debug_macro   0x0000394a       0xd7 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
- .debug_macro   0x00003a21       0x8d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
- .debug_macro   0x00003aae       0xb2 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
- .debug_macro   0x00003b60       0xe4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
- .debug_macro   0x00003c44      0x145 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_macro   0x00000b25       0xc4 ./src/main.o
+ .debug_macro   0x00000be9       0x1c ./src/main.o
+ .debug_macro   0x00000c05       0x2e ./src/main.o
+ .debug_macro   0x00000c33       0x10 ./src/main.o
+ .debug_macro   0x00000c43      0x12e ./src/main.o
+ .debug_macro   0x00000d71      0x5b3 ./src/main.o
+ .debug_macro   0x00001324       0x18 ./src/main.o
+ .debug_macro   0x0000133c      0x7af ./src/main.o
+ .debug_macro   0x00001aeb      0x2c7 ./src/main.o
+ .debug_macro   0x00001db2       0x63 ./src/main.o
+ .debug_macro   0x00001e15       0xe5 ./src/main.o
+ .debug_macro   0x00001efa      0x13f ./src/main.o
+ .debug_macro   0x00002039       0xea ./src/main.o
+ .debug_macro   0x00002123      0x2f7 ./src/main.o
+ .debug_macro   0x0000241a      0x33a ./src/main.o
+ .debug_macro   0x00002754       0x82 ./src/main.o
+ .debug_macro   0x000027d6      0x12b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00002901      0xab4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x000033b5       0x8d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_macro   0x00003442       0x1c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_macro   0x0000345e      0x2c7 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_macro   0x00003725      0x2f1 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_macro   0x00003a16       0xa9 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_macro   0x00003abf       0x3a C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_macro   0x00003af9       0xdd C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_macro   0x00003bd6       0x5a C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_macro   0x00003c30       0x5d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_macro   0x00003c8d       0xd7 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_macro   0x00003d64       0x8d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+ .debug_macro   0x00003df1       0xb2 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_macro   0x00003ea3       0xe4 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_macro   0x00003f87      0x145 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_macro   0x000040cc       0xa9 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+ .debug_macro   0x00004175      0x334 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
-.debug_line     0x00000000     0x235b
+.debug_line     0x00000000     0x36f0
  .debug_line    0x00000000      0x162 ./src/cr_startup_lpc175x_6x.o
  .debug_line    0x00000162       0xb7 ./src/crp.o
- .debug_line    0x00000219      0x4fb ./src/main.o
- .debug_line    0x00000714      0x416 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
- .debug_line    0x00000b2a      0x482 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_line    0x00000fac      0x44f C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
- .debug_line    0x000013fb      0x229 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
- .debug_line    0x00001624      0x39c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
- .debug_line    0x000019c0      0x99b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_line    0x00000219      0x577 ./src/main.o
+ .debug_line    0x00000790      0x416 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_line    0x00000ba6      0x482 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_line    0x00001028      0x44f C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_line    0x00001477      0x229 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_line    0x000016a0      0x39c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+ .debug_line    0x00001a3c      0x99b C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_line    0x000023d7     0x1319 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
-.debug_str      0x00000000     0xc8c1
+.debug_str      0x00000000     0xe9fc
  .debug_str     0x00000000     0x2ff8 ./src/cr_startup_lpc175x_6x.o
                                0x300b (size before relaxing)
  .debug_str     0x00002ff8       0xe9 ./src/crp.o
                                0x2ef4 (size before relaxing)
- .debug_str     0x000030e1     0x8963 ./src/main.o
-                               0xb7fc (size before relaxing)
- .debug_str     0x0000ba44      0x42e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_str     0x000030e1     0xa34e ./src/main.o
+                               0xd1f0 (size before relaxing)
+ .debug_str     0x0000d42f      0x42e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
                                0x89c2 (size before relaxing)
- .debug_str     0x0000be72      0x118 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_str     0x0000d85d      0x118 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
                                0x9bbc (size before relaxing)
- .debug_str     0x0000bf8a      0x3fe C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_str     0x0000d975      0x3fe C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
                                0x9d6c (size before relaxing)
- .debug_str     0x0000c388       0x2d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_str     0x0000dd73       0x2d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
                                0x47e9 (size before relaxing)
- .debug_str     0x0000c3b5      0x200 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+ .debug_str     0x0000dda0      0x200 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
                                0x8e34 (size before relaxing)
- .debug_str     0x0000c5b5      0x30c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_str     0x0000dfa0      0x30c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
                                0xabe1 (size before relaxing)
+ .debug_str     0x0000e2ac      0x750 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                               0xbc71 (size before relaxing)
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 ./src/cr_startup_lpc175x_6x.o
@@ -827,6 +952,7 @@ LOAD linker stubs
  .comment       0x00000045       0x46 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
  .comment       0x00000045       0x46 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
  .comment       0x00000045       0x46 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .comment       0x00000045       0x46 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
  .comment       0x00000045       0x46 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
  .comment       0x00000045       0x46 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
  .comment       0x00000045       0x46 d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
@@ -852,24 +978,27 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000168       0x2d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
  .ARM.attributes
-                0x00000195       0x2d d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
+                0x00000195       0x2d C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
  .ARM.attributes
-                0x000001c2       0x2d d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+                0x000001c2       0x2d d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libcr_c.a(__weak__main.o)
  .ARM.attributes
-                0x000001ef       0x2d d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
+                0x000001ef       0x2d d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(double.o)
+ .ARM.attributes
+                0x0000021c       0x2d d:/programas/mcuxpressoide_11.8.0_1165/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.8.0.202306131047/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libcr_eabihelpers.a(float.o)
 
-.debug_frame    0x00000000      0x5b8
+.debug_frame    0x00000000      0x91c
  .debug_frame   0x00000000      0x170 ./src/cr_startup_lpc175x_6x.o
- .debug_frame   0x00000170       0xf0 ./src/main.o
- .debug_frame   0x00000260       0x38 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
- .debug_frame   0x00000298       0xa0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
- .debug_frame   0x00000338       0x94 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
- .debug_frame   0x000003cc       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
- .debug_frame   0x000003ec       0x50 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
- .debug_frame   0x0000043c      0x17c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_frame   0x00000170      0x140 ./src/main.o
+ .debug_frame   0x000002b0       0x38 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_frame   0x000002e8       0xa0 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+ .debug_frame   0x00000388       0x94 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
+ .debug_frame   0x0000041c       0x20 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+ .debug_frame   0x0000043c       0x50 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
+ .debug_frame   0x0000048c      0x17c C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_frame   0x00000608      0x314 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
 .debug_loclists
-                0x00000000      0x845
+                0x00000000     0x188b
  .debug_loclists
                 0x00000000      0x11e C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
  .debug_loclists
@@ -880,6 +1009,8 @@ LOAD linker stubs
                 0x00000294       0xc2 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_pinsel.o)
  .debug_loclists
                 0x00000356      0x4ef C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
+ .debug_loclists
+                0x00000845     0x1046 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
 
 Cross Reference Table
 
@@ -890,10 +1021,12 @@ BusFault_Handler                                  ./src/cr_startup_lpc175x_6x.o
 CANActivity_IRQHandler                            ./src/cr_startup_lpc175x_6x.o
 CAN_IRQHandler                                    ./src/cr_startup_lpc175x_6x.o
 CLKPWR_ConfigPPWR                                 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                                                  C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
                                                   C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
 CLKPWR_DeepPowerDown                              C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
 CLKPWR_DeepSleep                                  C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
 CLKPWR_GetPCLK                                    C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
+                                                  C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
                                                   C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
 CLKPWR_GetPCLKSEL                                 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
 CLKPWR_PowerDown                                  C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_clkpwr.o)
@@ -975,6 +1108,41 @@ UART0_IRQHandler                                  ./src/cr_startup_lpc175x_6x.o
 UART1_IRQHandler                                  ./src/cr_startup_lpc175x_6x.o
 UART2_IRQHandler                                  ./src/cr_startup_lpc175x_6x.o
 UART3_IRQHandler                                  ./src/cr_startup_lpc175x_6x.o
+UART3_SendByte                                    ./src/main.o
+UART_ABClearIntPending                            C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_ABCmd                                        C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_CheckBusy                                    C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_ConfigStructInit                             C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                                                  ./src/main.o
+UART_DeInit                                       C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_FIFOConfig                                   C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                                                  ./src/main.o
+UART_FIFOConfigStructInit                         C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                                                  ./src/main.o
+UART_ForceBreak                                   C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_FullModemConfigMode                          C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_FullModemForcePinState                       C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_FullModemGetStatus                           C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_GetIntId                                     C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_GetLineStatus                                C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_Init                                         C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                                                  ./src/main.o
+UART_IntConfig                                    C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_IrDACmd                                      C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_IrDAInvtInputCmd                             C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_IrDAPulseDivConfig                           C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_RS485Config                                  C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_RS485ReceiverCmd                             C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_RS485Send                                    C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_RS485SendData                                C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_RS485SendSlvAddr                             C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_Receive                                      C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_ReceiveByte                                  C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_Send                                         C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                                                  ./src/main.o
+UART_SendByte                                     C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+UART_TxCmd                                        C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
+                                                  ./src/main.o
 USBActivity_IRQHandler                            ./src/cr_startup_lpc175x_6x.o
 USB_IRQHandler                                    ./src/cr_startup_lpc175x_6x.o
 UsageFault_Handler                                ./src/cr_startup_lpc175x_6x.o
@@ -1058,12 +1226,14 @@ _vStackTop                                        ./src/cr_startup_lpc175x_6x.o
 adcv                                              ./src/main.o
 bss_init                                          ./src/cr_startup_lpc175x_6x.o
 check_failed                                      C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_libcfg_default.o)
+                                                  C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_uart.o)
                                                   C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_timer.o)
                                                   C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\Debug\libCMSISv2p00_LPC17xx.a(lpc17xx_dac.o)
 configADC                                         ./src/main.o
 configDAC                                         ./src/main.o
 configPin                                         ./src/main.o
 configTimer                                       ./src/main.o
+configUART                                        ./src/main.o
 dac                                               ./src/main.o
 data_init                                         ./src/cr_startup_lpc175x_6x.o
 g_pfnVectors                                      ./src/cr_startup_lpc175x_6x.o
