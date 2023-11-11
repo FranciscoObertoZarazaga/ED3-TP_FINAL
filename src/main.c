@@ -84,7 +84,7 @@ void configDAC(){
 }
 
 void configUART(){
-    LPC_SC->PCONP |= (1 << 25);  // UART3 ON
+    /*LPC_SC->PCONP |= (1 << 25);  // UART3 ON
 
     // Configurar PCLK para UART3
     CLKPWR_SetPCLKDiv(CLKPWR_PCLKSEL_UART3, CLKPWR_PCLKSEL_CCLK_DIV_4);
@@ -114,7 +114,34 @@ void configUART(){
     UART_FIFOConfig(LPC_UART3, &fifo);
 
     // Habilitar transmisión
-    UART_TxCmd(LPC_UART3, ENABLE);
+    UART_TxCmd(LPC_UART3, ENABLE);*/
+
+	// 1. Habilitar UART3
+	LPC_SC->PCONP |= (1 << 25);  // UART3 ON
+
+	// 2. Configurar PCLK para UART3 a CCLK/4
+	LPC_SC->PCLKSEL1 &= ~(0x03 << 18);  // Limpiar bits
+	LPC_SC->PCLKSEL1 |= (0x00 << 18);   // CCLK/4 para UART3
+
+	// 3. Configurar los pines para UART3 (se omite en este ejemplo)
+
+	// 4. Configurar los parámetros de UART3
+	LPC_UART3->LCR = 0x83;  // DLAB=1, 8 bits, sin paridad, 1 bit de parada
+
+	// Calcular el valor del divisor para 4 baudios
+	// Fórmula: PCLK / (16 * BaudRate)
+	uint32_t PCLK = SystemCoreClock / 4;
+	uint32_t divisor = PCLK / (16 * 4);
+	LPC_UART3->DLM = (divisor >> 8) & 0xFF;
+	LPC_UART3->DLL = divisor & 0xFF;
+
+	LPC_UART3->LCR = 0x03;  // Bloquear acceso a DLM y DLL
+
+	// 5. Configurar y resetear FIFO
+	LPC_UART3->FCR = 0x07;  // Habilitar FIFO y resetear FIFOs RX y TX
+
+	// 6. Habilitar transmisión
+	LPC_UART3->TER = 0x80;
 }
 
 
