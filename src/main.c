@@ -23,7 +23,7 @@ typedef enum{
 uint32_t j = 0, adcv = 0, dac = 0; //Globales de Control
 float volts = 0, temperature = 0;
 uint32_t Tiempo[5]={25,25000,6250000,12500000,25000000}; //Periodos [micro,mili,segundo/2,segundo]
-uint8_t pinMatch,temperatureToInt = 0,UARTTX = 0; //Global de control del pin match
+uint8_t pinMatch,temperatureToInt = 0;
 
 
 // FUNCIONES #####################################################################
@@ -42,9 +42,7 @@ int main(void) {
 	configUART();
 	configTimer();
 	configDMA();
-    while(1){
-    	UARTTX = LPC_UART3->TER & 0xFF;
-    }
+    while(1){}
     return 0;
 }
 
@@ -102,7 +100,7 @@ void configUART(){
 	UART.Parity				= UART_PARITY_NONE;
 	UART.Baud_rate			= 100;
 
-	FIFO.FIFO_DMAMode		= DISABLE;
+	FIFO.FIFO_DMAMode		= ENABLE;
 	FIFO.FIFO_Level			= UART_FIFO_TRGLEV0;
 	FIFO.FIFO_ResetTxBuf	= ENABLE;
 	FIFO.FIFO_ResetRxBuf	= DISABLE;
@@ -116,19 +114,26 @@ void configUART(){
 
 void configDMA(){
 
-	/*GPDMA_LLI_Type LLI;
+	GPDMA_LLI_Type LLI;
 	GPDMA_Channel_CFG_Type DMA;
 
 	LLI.SrcAddr = (uint32_t) &temperatureToInt; //DUDA: 1) Espacio de memoria? 2) Variable auxiliar "temperatureToInt" necesario? PERO CREO QUE ESTÁ BIEN
-	LLI.DstAddr = (uint32_t) LPC_UART3->THR;
+	LLI.DstAddr = (uint32_t) &(LPC_UART3->THR);
 	LLI.NextLLI = (uint32_t) &LLI;
-	LLI.Control = sizeof(temperatureToInt)<<0 | 0<<18 | 2<<21 | 0<<26 | 0<< 27;			//DUDA: TransferSize?
+	LLI.Control= sizeof(temperatureToInt)
+								| (0<<18) 	//source width 8 bit
+								| (0<<21) 	//dest. width 8 bit
+								| (0<<26) 	//source increment
+								| (0<<27)	//dest increment
+								;
 	/*
-	 * 1<<0			TransferSize
-	 * 0<<18 		SourceWidth			= 8bits
+	 * sizeof(temperatureToInt)<<0			TransferSize = 8bits
+	 * 000<<18 		SourceWidth			= 8bits
 	 * 2<<21		DestinationWidth	= 32bits
+	 * 00<<26 		Static Address Source & Destination
 	*/
-	/*GPDMA_Init();
+
+	GPDMA_Init();
 
 	DMA.ChannelNum 		= 0;
 	DMA.TransferSize 	= sizeof(temperatureToInt);
@@ -142,7 +147,7 @@ void configDMA(){
 
 
 	GPDMA_Setup(&DMA);
-	GPDMA_ChannelCmd(0, ENABLE);*/
+	GPDMA_ChannelCmd(0, ENABLE);
 
 
 }
@@ -189,7 +194,9 @@ void TIMER0_IRQHandler(){
 	if (pinMatch == 0){
 		adcv = (LPC_ADC->ADDR0 & 4095<<4)>>4;
 		volts = 3.3 * adcv / 4095;
-		temperature = volts / 0.01 - 2;
+		if (volts < 1.52 && volts > 0.04){
+			temperature = volts / 0.01 - 2;
+		}
 		//dac = volts * 1024 / 0.42; // Convertimos volts valor del dac
 		if (temperature < 27) {
 			dac = 0;
@@ -199,10 +206,9 @@ void TIMER0_IRQHandler(){
 			dac = 1023;
 		}
 
-		//temperatureToInt = temperature;
-		temperatureToInt = 0b00000000;
+		temperatureToInt = temperature;
 
-		UART_SendByte(LPC_UART3, temperatureToInt);
+		//UART_SendByte(LPC_UART3, temperatureToInt);
 		DAC_UpdateValue(LPC_DAC, dac);
 	}else{
 		if (temperature > 27 && temperature < 45){
