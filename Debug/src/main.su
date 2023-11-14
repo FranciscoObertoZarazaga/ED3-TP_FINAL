@@ -1,9 +1,9 @@
 C:\Users\frano\OneDrive\Documentos\mcu_expresso\workspaceTp\CMSISv2p00_LPC17xx\inc/core_cm3.h:928:22:NVIC_EnableIRQ	16	static
-../src/main.c:38:5:main	8	static
-../src/main.c:52:6:configTimer	24	static
-../src/main.c:73:6:configADC	8	static
-../src/main.c:86:6:configDAC	8	static
-../src/main.c:93:6:configUART	24	static
-../src/main.c:115:6:configDMA	64	static
-../src/main.c:155:6:configPin	16	static
-../src/main.c:190:6:TIMER0_IRQHandler	8	static
+../src/main.c:39:5:main	8	static
+../src/main.c:53:6:configTimer	24	static
+../src/main.c:75:6:configADC	8	static
+../src/main.c:89:6:configDAC	8	static
+../src/main.c:96:6:configUART	24	static
+../src/main.c:118:6:configDMA	48	static
+../src/main.c:158:6:configPin	16	static
+../src/main.c:193:6:TIMER0_IRQHandler	8	static

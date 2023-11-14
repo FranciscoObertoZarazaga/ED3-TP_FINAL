@@ -25,6 +25,7 @@ float volts = 0, temperature = 0;
 uint32_t Tiempo[5]={25,25000,6250000,12500000,25000000}; //Periodos [micro,mili,segundo/2,segundo]
 uint8_t pinMatch,temperatureToInt = 0;
 
+GPDMA_LLI_Type LLI;
 
 // FUNCIONES #####################################################################
 void configADC();
@@ -42,7 +43,7 @@ int main(void) {
 	configUART();
 	configTimer();
 	configDMA();
-    while(1){}
+    while(1);
     return 0;
 }
 
@@ -53,33 +54,35 @@ void configTimer(){
 	CLKPWR_SetPCLKDiv(CLKPWR_PCLKSEL_TIMER0, CLKPWR_PCLKSEL_CCLK_DIV_4);
 
 	TIM_MATCHCFG_Type match;
-	match.MatchChannel = 1;
-	match.IntOnMatch = ENABLE;
-	match.StopOnMatch = DISABLE;
-	match.ResetOnMatch = ENABLE;
-	match.ExtMatchOutputType = TIM_EXTMATCH_TOGGLE;
+	match.MatchChannel = 1; // Match Channel 1
+	match.IntOnMatch = ENABLE; // Interrupt on match
+	match.StopOnMatch = DISABLE; // Stop OFF
+	match.ResetOnMatch = ENABLE; // Loop
+	match.ExtMatchOutputType = TIM_EXTMATCH_TOGGLE; // P1.29 Toggle
 	match.MatchValue = (Tiempo[cuarto_segundo]-1)/2;
 	TIM_ConfigMatch(LPC_TIM0, &match);
-	LPC_TIM0->EMR |= 3<<6;
-	LPC_TIM0->PR = 0;
 
-	TIM_ClearIntPending(LPC_TIM0, TIM_MR0_INT);
-	NVIC_EnableIRQ(TIMER0_IRQn);
+	LPC_TIM0->EMR |= 3<<6; // P1.29 Toggle
+	LPC_TIM0->PR = 0; // Prescaler 0
+
+	TIM_ClearIntPending(LPC_TIM0, TIM_MR0_INT); // Clear Flags
+	NVIC_EnableIRQ(TIMER0_IRQn); // Interrupt Enable
 
 	TIM_Cmd(LPC_TIM0, ENABLE);
-	TIM_ResetCounter(LPC_TIM0);
+	TIM_ResetCounter(LPC_TIM0); // Inicia el contador en 0
 }
 
 void configADC(){
 	LPC_SC->PCONP 			|= 1<<12;		// Enciendo ADC
 	LPC_SC->PCLKSEL0		|= 3<<24;		// f = 12.5MHz
-	LPC_ADC->ADCR 			|= 1<<8;		// Divisor por 1
+	LPC_ADC->ADCR 			|= 1<<8;		// Divisor de frecuencia por 1
 	LPC_ADC->ADCR 			|= 0<<16;		// Modo burst = FALSE
 	LPC_ADC->ADCR			|= (4<<24);		// Start = 100 -> Start on MATCH 0.1
+	// No interrumpiremos por ADC
 	//LPC_ADC->ADINTEN		|= 1<<0;		// El canal 0 produce interrupciones
-	LPC_ADC->ADINTEN		&= ~(1<<8);		// Interrupciones por los canales individuales-> VA SI O SI
+	LPC_ADC->ADINTEN		&= ~(1<<8);		// Interrupciones por los canales individuales (obligatorio aunque no usemos interrupciones)
 
-	LPC_ADC->ADCR			|= 1<<21;		//PDN = 1
+	LPC_ADC->ADCR			|= 1<<21;		//PDN = 1, En 1 Habilita el ADC
 	NVIC_EnableIRQ(ADC_IRQn);
 }
 
@@ -95,32 +98,32 @@ void configUART(){
 	UART_CFG_Type UART;
 	UART_FIFO_CFG_Type FIFO;
 
-	UART.Databits			= UART_DATABIT_8;
-	UART.Stopbits 			= UART_STOPBIT_1;
-	UART.Parity				= UART_PARITY_NONE;
-	UART.Baud_rate			= 100;
+	UART.Databits			= UART_DATABIT_8; // 8 bits por dato
+	UART.Stopbits 			= UART_STOPBIT_2; // 1 bit de parada
+	UART.Parity				= UART_PARITY_NONE; // Sin bit de paridad
+	UART.Baud_rate			= 300; // Tasa de 100 Baudios
 
-	FIFO.FIFO_DMAMode		= ENABLE;
-	FIFO.FIFO_Level			= UART_FIFO_TRGLEV0;
-	FIFO.FIFO_ResetTxBuf	= ENABLE;
-	FIFO.FIFO_ResetRxBuf	= DISABLE;
+	FIFO.FIFO_DMAMode		= ENABLE; // Habilita la transmisión por DMA a la lista FIFO
+	FIFO.FIFO_Level			= UART_FIFO_TRGLEV0; // 1 byte de datos
+	FIFO.FIFO_ResetTxBuf	= ENABLE; // Resetea la lista FIFO de transmisión
+	FIFO.FIFO_ResetRxBuf	= DISABLE; // No usamos recepción
 
 
 	UART_Init(LPC_UART3, &UART);
 	UART_FIFOConfig(LPC_UART3, &FIFO);
-	UART_TxCmd(LPC_UART3, ENABLE);
+	UART_TxCmd(LPC_UART3, ENABLE); // Habilita transmisión
 }
 
 
 void configDMA(){
 
-	GPDMA_LLI_Type LLI;
+
 	GPDMA_Channel_CFG_Type DMA;
 
-	LLI.SrcAddr = (uint32_t) &temperatureToInt; //DUDA: 1) Espacio de memoria? 2) Variable auxiliar "temperatureToInt" necesario? PERO CREO QUE ESTÁ BIEN
-	LLI.DstAddr = (uint32_t) &(LPC_UART3->THR);
-	LLI.NextLLI = (uint32_t) &LLI;
-	LLI.Control= sizeof(temperatureToInt)
+	LLI.SrcAddr = (uint32_t) &temperatureToInt; // Source var in memory
+	LLI.DstAddr = (uint32_t) &(LPC_UART3->THR); // Destination UART3 THR
+	LLI.NextLLI = (uint32_t) &LLI; // Se repite la transmisión
+	LLI.Control= 1 //sizeof(temperatureToInt)- bytes
 								| (0<<18) 	//source width 8 bit
 								| (0<<21) 	//dest. width 8 bit
 								| (0<<26) 	//source increment
@@ -135,10 +138,10 @@ void configDMA(){
 
 	GPDMA_Init();
 
-	DMA.ChannelNum 		= 0;
-	DMA.TransferSize 	= sizeof(temperatureToInt);
+	DMA.ChannelNum 		= 0; //Ch0
+	DMA.TransferSize 	= 1;//sizeof(temperatureToInt);
 	DMA.TransferWidth 	= 0;
-	DMA.SrcMemAddr 		= (uint32_t) &temperatureToInt;		//DUDA: NO VA LA DIRECCION DE MEMORIA?
+	DMA.SrcMemAddr 		= (uint32_t) &temperatureToInt;
 	DMA.DstMemAddr		= 0;
 	DMA.TransferType 	= GPDMA_TRANSFERTYPE_M2P;
 	DMA.SrcConn 		= 0;
@@ -188,35 +191,44 @@ void configPin(){
 // INTERRUPCIONES ################################################################
 
 void TIMER0_IRQHandler(){
-	j++;
-	//ADC_StartCmd(LPC_ADC, ADC_START_NOW);
-	pinMatch = (LPC_TIM0->EMR & 2) >> 1;
+	j++; // Variable de control de frecuencia del timer
+
+	pinMatch = (LPC_TIM0->EMR & 2) >> 1; // Guardo valor del pin del TIMER
+
+	// Flanco de bajada
 	if (pinMatch == 0){
-		adcv = (LPC_ADC->ADDR0 & 4095<<4)>>4;
-		volts = 3.3 * adcv / 4095;
-		if (volts < 1.52 && volts > 0.04){
-			temperature = volts / 0.01 - 2;
-		}
-		//dac = volts * 1024 / 0.42; // Convertimos volts valor del dac
-		if (temperature < 27) {
-			dac = 0;
-		} else if(temperature < 45) {
-			dac = 600;
-		}else{
-			dac = 1023;
+		adcv = (LPC_ADC->ADDR0 & 4095<<4)>>4; // Conversión del ADC
+
+		volts = 3.3 * adcv / 4095; // Cálculo del voltaje leído por el ADC
+
+		if (volts < 1.52 && volts > 0.04){ // Filtro de ruido
+			temperature = volts / 0.01 - 2; // Temperatura sensada
 		}
 
-		temperatureToInt = temperature;
+
+		if (temperature < 27) {
+			dac = 0; // No suena debajo de los 27°C
+		} else if(temperature < 45) {
+			dac = 600; // Suena debilmente entre 27 y 45 °C
+		}else{
+			dac = 1023; // Suena fuertemente por encima de los 45°C
+		}
+
+		temperatureToInt = temperature; // Convierte temperatura float a uint8_t
+
+		LLI.Control |= 1<<0; // Resetea contador del DMA
 
 		//UART_SendByte(LPC_UART3, temperatureToInt);
-		DAC_UpdateValue(LPC_DAC, dac);
-	}else{
+		DAC_UpdateValue(LPC_DAC, dac); // Conversion del DAC
+
+	}else{ // Flanco de subida
 		if (temperature > 27 && temperature < 45){
-			DAC_UpdateValue(LPC_DAC, 0);
+			DAC_UpdateValue(LPC_DAC, 0); // Suena intermitentemente entre 27 y 45 °C
 		}
+		//temperatureToInt = 0xFF;
 	}
 
 
-	TIM_ResetCounter(LPC_TIM0);
-	TIM_ClearIntPending(LPC_TIM0, TIM_MR0_INT);
+	TIM_ResetCounter(LPC_TIM0); // Resetea el contador
+	TIM_ClearIntPending(LPC_TIM0, TIM_MR0_INT); // Limpia interrupciones del timer
 }
