@@ -101,7 +101,7 @@ void configUART(){
 	UART.Databits			= UART_DATABIT_8; // 8 bits por dato
 	UART.Stopbits 			= UART_STOPBIT_2; // 1 bit de parada
 	UART.Parity				= UART_PARITY_NONE; // Sin bit de paridad
-	UART.Baud_rate			= 300; // Tasa de 100 Baudios
+	UART.Baud_rate			= 600; // Tasa de 600 Baudios
 
 	FIFO.FIFO_DMAMode		= ENABLE; // Habilita la transmisión por DMA a la lista FIFO
 	FIFO.FIFO_Level			= UART_FIFO_TRGLEV0; // 1 byte de datos
